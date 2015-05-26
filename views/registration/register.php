@@ -12,7 +12,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-/*
+/**
  * @var yii\web\View              $this
  * @var dektrium\user\models\User $user
  * @var dektrium\user\Module      $module
@@ -34,9 +34,9 @@ $this->params['breadcrumbs'][] = $this->title;
                     'enableClientValidation' => false,
                 ]); ?>
 
-                <?= $form->field($model, 'username') ?>
-
                 <?= $form->field($model, 'email') ?>
+
+                <?= $form->field($model, 'username') ?>
 
                 <?php if ($module->enableGeneratingPassword == false): ?>
                     <?= $form->field($model, 'password')->passwordInput() ?>

@@ -12,18 +12,15 @@
 use yii\db\Migration;
 use yii\db\Schema;
 
-/**
- * @author Dmitry Erofeev <dmeroff@gmail.com>
- */
-class m140830_171933_fix_ip_field extends Migration
+class m141222_135246_alter_username_length extends Migration
 {
     public function up()
     {
-        $this->alterColumn('{{%user}}', 'registration_ip', Schema::TYPE_BIGINT);
+        $this->alterColumn('{{%user}}', 'username', Schema::TYPE_STRING . '(255)');
     }
 
     public function down()
     {
-        $this->alterColumn('{{%user}}', 'registration_ip', Schema::TYPE_INTEGER);
+        $this->alterColumn('{{%user}}', 'username', Schema::TYPE_STRING . '(25)');
     }
 }

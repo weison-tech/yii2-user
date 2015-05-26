@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'sourcePath' => __DIR__.'/../',
+    'sourcePath' => __DIR__ . '/../',
     'messagePath' => __DIR__,
     'languages' => [
         'ca',
@@ -9,6 +9,7 @@ return [
         'de',
         'es',
         'fa-IR',
+        'fi',
         'fr',
         'hr',
         'hu',
@@ -39,6 +40,7 @@ return [
         '.hgkeep',
         '/messages',
         '/tests',
+        '/vendor',
     ],
     'format' => 'php',
 ];
