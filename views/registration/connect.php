@@ -1,5 +1,4 @@
 <?php
-
 /*
  * This file is part of the Dektrium project.
  *
@@ -8,18 +7,15 @@
  * For the full copyright and license information, please view the LICENSE.md
  * file that was distributed with this source code.
  */
-
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
 /**
  * @var yii\web\View $this
  * @var yii\widgets\ActiveForm $form
  * @var dektrium\user\models\User $model
  * @var dektrium\user\models\Account $account
  */
-
-$this->title = $provider.Yii::t('user', 'Connect Sign in');
+$this->title = Yii::t('user', 'Sign in');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="row">
@@ -29,17 +25,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
             </div>
             <div class="panel-body">
-                <div>
-                        <img src="<?=$avatar;?>" style="width:30px;height:30px;" />   <span><?= Yii::t('user', 'Users') ?><font color="red"><?=$nickname;?></font><?= Yii::t('user', 'Login success') ?></span>                 
-                </div>
-                 <br/>
                 <div class="alert alert-info">
                     <p>
-<<<<<<< HEAD
-                        <?= Yii::t('user', 'In order to better experience the function of website, please binding mailbox.') ?>
-=======
                         <?= Yii::t('user', 'In order to finish your registration, we need you to enter following fields') ?>:
->>>>>>> source/master
                     </p>
                 </div>
                 <?php $form = ActiveForm::begin([
