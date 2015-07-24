@@ -223,5 +223,6 @@ return [
     'In order to finish your registration, we need you to enter your email address' => '为了完成注册，请输入邮件地址',
     'Connect Sign in' => '互联登陆',
     'Login success' => '登陆成功',
-    'In order to better experience the function of website, please binding mailbox.' => '为了更好的使用网站的功能，请绑定邮箱。',
+    'In order to better experience the function of website, please binding mailbox.' => '为了更好的使用网站的功能，请绑定邮箱',
+    'In order to finish your registration, we need you to enter following fields' => '为了更好的使用网站的功能，请填写下面区域',
 ];

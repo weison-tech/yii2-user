@@ -25,6 +25,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 <h3 class="panel-title"><?= Html::encode($this->title) ?></h3>
             </div>
             <div class="panel-body">
+                <div>
+                    <img src="<?=$avatar;?>" style="width:30px;height:30px;" />   <span><?= Yii::t('user', 'Users') ?><font color="red"><?=$nickname;?></font><?= Yii::t('user', 'Login success') ?></span>                 
+                </div>
+                 <br/>
                 <div class="alert alert-info">
                     <p>
                         <?= Yii::t('user', 'In order to finish your registration, we need you to enter following fields') ?>:

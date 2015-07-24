@@ -119,12 +119,31 @@ class Account extends ActiveRecord
 
     public static function create(BaseClientInterface $client)
     {
+        //xiaoma update 
+        //qq and sina 's attr has no id
+        $client_type = $client->getId();
+        switch ($client_type) {
+            case 'qq':
+                $client_id = $client->getUserAttributes()['openid'];
+                $data = json_encode($client->getUserInfo());
+                break;
+            case 'sina':
+                $client_id = $client->getUserAttributes()['uid'];
+                $data = json_encode($client->getUserInfo());
+                break;
+            default:
+                $client_id = $client->getUserAttributes()['id'];
+                $data = json_encode($client->getUserAttributes());
+                break;
+        }
+
+
         /** @var Account $account */
         $account = Yii::createObject([
             'class'      => static::className(),
             'provider'   => $client->getId(),
-            'client_id'  => $client->getUserAttributes()['id'],
-            'data'       => json_encode($client->getUserAttributes()),
+            'client_id'  => $client_id,
+            'data'       => $data,
         ]);
 
         if ($client instanceof ClientInterface) {
@@ -176,40 +195,16 @@ class Account extends ActiveRecord
      */
     protected static function fetchAccount(BaseClientInterface $client)
     {
-<<<<<<< HEAD
-        $account = static::getFinder()->findAccountByClient($client);
-        
-        /**
-         * xiaoma update;
-         */
-        $clientId = 0; $data = '';
-        $provider = $client->getId();
-        if(isset($client->getUserAttributes()['id'])){
-                    $clientId = $client->getUserAttributes()['id'];
-                    $data = json_encode($client->getUserAttributes());
-        }else{
-                 if($provider == 'qq'){
-                            $clientId = $client->getUserAttributes()['openid'];
-                            $data = json_encode($client->getUserInfo());
-                 }else if($provider == 'sina'){
-                            $clientId = $client->getUserAttributes()['uid'];
-                            $data = json_encode($client->getUserInfo());
-                 }
-        }
-=======
         $account = static::getFinder()->findAccount()->byClient($client)->one();
->>>>>>> source/master
-
         if (null === $account) {
             $account = Yii::createObject([
                 'class'      => static::className(),
-                'provider'   => $provider,
-                'client_id'  => $clientId,
-                'data'       => $data,
+                'provider'   => $client->getId(),
+                'client_id'  => $client->getUserAttributes()['id'],
+                'data'       => json_encode($client->getUserAttributes()),
             ]);
             $account->save(false);
         }
-
         return $account;
     }
 

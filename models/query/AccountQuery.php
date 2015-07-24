@@ -60,9 +60,23 @@ class AccountQuery extends ActiveQuery
      */
     public function byClient(ClientInterface $client)
     {
+        //xiaoma update 
+        //qq and sina 's attr has no id
+        $client_type = $client->getId();
+        switch ($client_type) {
+            case 'qq':
+                $client_id = $client->getUserAttributes()['openid'];
+                break;
+            case 'sina':
+                $client_id = $client->getUserAttributes()['uid'];
+                break;
+            default:
+                $client_id = $client->getUserAttributes()['id'];
+                break;
+        }
         return $this->andWhere([
             'provider'  => $client->getId(),
-            'client_id' => $client->getUserAttributes()['id'],
+            'client_id' => $client_id,
         ]);
     }
 }
