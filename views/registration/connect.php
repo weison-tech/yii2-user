@@ -12,7 +12,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
-/*
+/**
  * @var yii\web\View $this
  * @var yii\widgets\ActiveForm $form
  * @var dektrium\user\models\User $model
@@ -35,7 +35,11 @@ $this->params['breadcrumbs'][] = $this->title;
                  <br/>
                 <div class="alert alert-info">
                     <p>
+<<<<<<< HEAD
                         <?= Yii::t('user', 'In order to better experience the function of website, please binding mailbox.') ?>
+=======
+                        <?= Yii::t('user', 'In order to finish your registration, we need you to enter following fields') ?>:
+>>>>>>> source/master
                     </p>
                 </div>
                 <?php $form = ActiveForm::begin([
@@ -43,6 +47,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]); ?>
 
                 <?= $form->field($model, 'email') ?>
+
+                <?= $form->field($model, 'username') ?>
 
                 <?= Html::submitButton(Yii::t('user', 'Continue'), ['class' => 'btn btn-success btn-block']) ?>
 

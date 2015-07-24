@@ -18,6 +18,8 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'We have generated a password for you' => 'Мы сгенерировали пароль для вас',
+    'Your account has been created and a message with further instructions has been sent to your email' => 'Ваш аккаунт был создан и сообщение с дальнейшими инструкциями отправлено на ваш email',
     'In order to finish your registration, we need you to enter your email address' => 'Чтобы закончить регистрацию, вы должны ввести свой почтовый адрес',
     'Something went wrong' => 'Что-то пошло не так',
     'VKontakte' => 'ВКонтакте',
@@ -50,7 +52,7 @@ return [
     'Bio' => 'О себе',
     'Block' => 'Блокировать',
     'Block status' => 'Блокировка',
-    'Blocked at {0, date, MMMM dd, YYYY HH:mm}' => 'Заблокирован  {0, date, MMMM dd, YYYY HH:mm}',
+    'Blocked at {0, date, MMMM dd, YYYY HH:mm}' => 'Заблокирован  {0, date, dd MMMM, YYYY HH:mm}',
     'Change your avatar at Gravatar.com' => 'Изменить аватар на сайте Gravatar.com',
     'Complete password reset on {0}' => 'Смена пароля на сайте {0}',
     'Confirm' => 'Подтвердить',
@@ -60,7 +62,7 @@ return [
     'Confirmation status' => 'Статус',
     'Confirmation time' => 'Время активации',
     'Confirmed' => 'Активирован',
-    'Confirmed at {0, date, MMMM dd, YYYY HH:mm}' => 'Активирован {0, date, MMMM dd, YYYY HH:mm}',
+    'Confirmed at {0, date, MMMM dd, YYYY HH:mm}' => 'Активирован {0, date, dd MMMM, YYYY HH:mm}',
     'Connect' => 'Подключить',
     'Continue' => 'Продолжить',
     'Create' => 'Создать',
@@ -165,5 +167,5 @@ return [
     'Your email address has been changed' => 'Ваш email был успешно изменен',
     'Your password has been changed successfully.' => 'Ваш пароль был успешно изменен.',
     'Your profile has been updated' => 'Настройки профиля были успешно сохранены',
-    '{0, date, MMMM dd, YYYY HH:mm}' => '{0, date, MMMM dd, YYYY HH:mm}',
+    '{0, date, MMMM dd, YYYY HH:mm}' => '{0, date, dd MMMM, YYYY HH:mm}',
 ];
