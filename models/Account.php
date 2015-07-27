@@ -196,12 +196,32 @@ class Account extends ActiveRecord
     protected static function fetchAccount(BaseClientInterface $client)
     {
         $account = static::getFinder()->findAccount()->byClient($client)->one();
+        
+        //xiaoma update 
+        //qq and sina 's attr has no id
+        $client_type = $client->getId();
+
+        switch ($client_type) {
+            case 'qq':
+                $client_id = $client->getUserAttributes()['openid'];
+                $data = json_encode($client->getUserInfo());
+                break;
+            case 'sina':
+                $client_id = $client->getUserAttributes()['uid'];
+                $data = json_encode($client->getUserInfo());
+                break;
+            default:
+                $client_id = $client->getUserAttributes()['id'];
+                $data = json_encode($client->getUserAttributes());
+                break;
+        }
+
         if (null === $account) {
             $account = Yii::createObject([
                 'class'      => static::className(),
                 'provider'   => $client->getId(),
-                'client_id'  => $client->getUserAttributes()['id'],
-                'data'       => json_encode($client->getUserAttributes()),
+                'client_id'  => $client_id,
+                'data'       => $data,
             ]);
             $account->save(false);
         }
