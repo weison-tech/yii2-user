@@ -18,6 +18,7 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'We have generated a password for you' => '我们为你创建了初始密码',
     'A confirmation message has been sent to your new email address' => '确认消息已经发送到您的新邮箱。',
     'A message has been sent to your email address. It contains a confirmation link that you must click to complete registration.' => '一条信息已经发送到您的邮箱，里面包含了一个确认链接，您必须点击完成注册。',
     'A message has been sent to your email address. It contains a password that we generated for you.' => '一条信息已经发送到您的邮箱，里面包含了我们为您生成的密码。',
