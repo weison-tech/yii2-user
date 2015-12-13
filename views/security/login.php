@@ -52,7 +52,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <?php ActiveForm::end(); ?>
             </div>
         </div>
-        <?php if(Yii::$app->id !='app-backend') { ?>
+        <?php if(Yii::$app->id =='app-frontend') { ?>
                 <?php if ($module->enableConfirmation): ?>
                     <p class="text-center">
                         <?= Html::a(Yii::t('user', 'Didn\'t receive confirmation message?'), ['/user/registration/resend']) ?>
